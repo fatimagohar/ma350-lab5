@@ -31,7 +31,19 @@ quartiles(x)
 
 ## Problem 3
 
+The outliers are
+
+## Problem 4
+
 ```{r}
+turkey.outlier<- function (x=vector()){
+  if (x>quartiles(x[3]) && (x<quartiles(x[1])) {
+      TRUE 
+}else {
+  FALSE
+}
+}
 
 ```
+
 
