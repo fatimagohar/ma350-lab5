@@ -1,49 +1,93 @@
 ---
 title: "R Notebook"
+Author: "Odalys Barrientos & Fatima Gohar"
 output: html_notebook
 ---
 
-## Turkey
+# Lab 5: Get Me Out(lier) of Here!
 
 ## Problem 1
-
 ```{r}
 x <- c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
-quantile(x, 0.25)
-quantile(x, 0.75)
+
+quantile(x, 0.25) # first quartile
+quantile(x,0.5) # interquartile
+quantile(x, 0.75) # third quartile
 ```
 
 ## Problem 2
-
 ```{r}
+#` This function takes a vector containing a sample
+#`
+#` @param x the vector containing the sample
+#`
+#` @return a vector with three components the first quartile, the third quartile, and the interquartile
 quartiles<- function (x=vector()){
   firstquart<- quantile(x, 0.25)
-  secondquart<- quantile(x, 0.50)
   thirdquart<- quantile(x, 0.75)
-  quarts<- c(firstquart, secondquart, thirdquart)
+  interrange <- thirdquart-firstquart
+  quarts<- c(firstquart, thirdquart, interrange)
   return(quarts)
 }
 ```
 
 ```{r}
 quartiles(x)
+Q1 <- quantile(x, 0.25)
+Q2 <- quantile(x, 0.5)
+Q3 <- quantile(x, 0.75)
+interrange <- Q3-Q1
+out.bottom <- Q1-1.5*interrange
+out.top <- Q3+1.5*interrange
+
+out.bottom
+out.top
 ```
 
 ## Problem 3
-
-The outliers are
+According to Tukey's rule the outlier is 28.7. This value does not lie within the range of out.top and out.bottom. 
 
 ## Problem 4
+```{r}
+#` This function takes a vector containing a sample tells which elemnts of the sample are outliers 
+#`
+#` @param x a vector containing the sample 
+#`
+#` @return a Boolean vector with TRUE at the elements cooresponding to outlier observations and FALSE everywhere else
+tukey.outlier <- function(x=vector()){
+  outcomes <- ifelse((x < ((quartiles(x)[1])-1.5*(quartiles(x)[3])) | (x > ((quartiles(x)[2])+1.5*(quartiles(x)[3])))), TRUE, FALSE)
+  return(outcomes)
+  }
+```
 
 ```{r}
-turkey.outlier<- function (x=vector()){
-  if (x>quartiles(x[3]) && (x<quartiles(x[1])) {
-      TRUE 
-}else {
-  FALSE
-}
+tukey.outlier(x)
+which(tukey.outlier(x))
+
+x[11]
+```
+
+## Problem 5
+```{r}
+#` This function test if your guesses of outliers against tukey's test of outliers
+#`
+#` @param  the function tukey.outlier 
+#`
+#` @return TRUE if the function correctly identifies the outliers and FALSE otherwse
+test.tukey.outlier <- function(fun = tukey.outlier){
+  correct <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  TorF <- ifelse(correct == fun, TRUE, FALSE)
+  return(TorF)
 }
 
+test.tukey.outlier(tukey.outlier(x))
 ```
+
+## Problem 6
+```{r}
+-x
+tukey.outlier(-x)
+```
+For -x the value -28.7 is an out liers. 
 
 
