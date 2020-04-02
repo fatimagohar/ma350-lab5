@@ -1749,23 +1749,47 @@ summary {
 
 
 <!-- rnb-text-begin -->
+<<<<<<< HEAD
 <div id="turkey" class="section level2">
 <h2>Turkey</h2>
 </div>
+=======
+<div id="lab-5-get-me-outlier-of-here" class="section level1">
+<h1>Lab 5: Get Me Out(lier) of Here!</h1>
+>>>>>>> 081374421793ea5a5b7df11b830b7e452a6d9d26
 <div id="problem-1" class="section level2">
 <h2>Problem 1</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<<<<<<< HEAD
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSBjKDIuMiwgNy44LCAtNC40LCAwLjAsIC0xLjIsIDMuOSwgNC45LCAtNS43LCAtNy45LCAtNC45LCAyOC43LCA0LjkpXG5xdWFudGlsZSh4LCAwLjI1KVxuYGBgIn0= -->
 <pre class="r"><code>x &lt;- c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
 quantile(x, 0.25)</code></pre>
+=======
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSBjKDIuMiwgNy44LCAtNC40LCAwLjAsIC0xLjIsIDMuOSwgNC45LCAtNS43LCAtNy45LCAtNC45LCAyOC43LCA0LjkpXG5cbnF1YW50aWxlKHgsIDAuMjUpICMgZmlyc3QgcXVhcnRpbGVcbmBgYCJ9 -->
+<pre class="r"><code>x &lt;- c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+
+quantile(x, 0.25) # first quartile</code></pre>
+>>>>>>> 081374421793ea5a5b7df11b830b7e452a6d9d26
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlIFxuLTQuNTI1IFxuIn0= -->
 <pre><code>   25% 
 -4.525 </code></pre>
 <!-- rnb-output-end -->
+<<<<<<< HEAD
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXVhbnRpbGUoeCwgMC43NSlcbmBgYCJ9 -->
 <pre class="r"><code>quantile(x, 0.75)</code></pre>
+=======
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXVhbnRpbGUoeCwwLjUpICMgaW50ZXJxdWFydGlsZVxuYGBgIn0= -->
+<pre class="r"><code>quantile(x,0.5) # interquartile</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiNTAlIFxuMS4xIFxuIn0= -->
+<pre><code>50% 
+1.1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXVhbnRpbGUoeCwgMC43NSkgIyB0aGlyZCBxdWFydGlsZVxuYGBgIn0= -->
+<pre class="r"><code>quantile(x, 0.75) # third quartile</code></pre>
+>>>>>>> 081374421793ea5a5b7df11b830b7e452a6d9d26
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiNzUlIFxuNC45IFxuIn0= -->
 <pre><code>75% 
@@ -1778,12 +1802,26 @@ quantile(x, 0.25)</code></pre>
 <h2>Problem 2</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<<<<<<< HEAD
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXVhcnRpbGVzPC0gZnVuY3Rpb24gKHg9dmVjdG9yKCkpe1xuICBmaXJzdHF1YXJ0PC0gcXVhbnRpbGUoeCwgMC4yNSlcbiAgc2Vjb25kcXVhcnQ8LSBxdWFudGlsZSh4LCAwLjUwKVxuICB0aGlyZHF1YXJ0PC0gcXVhbnRpbGUoeCwgMC43NSlcbiAgcXVhcnRzPC0gYyhmaXJzdHF1YXJ0LCBzZWNvbmRxdWFydCwgdGhpcmRxdWFydClcbiAgcmV0dXJuKHF1YXJ0cylcbn1cbmBgYCJ9 -->
 <pre class="r"><code>quartiles&lt;- function (x=vector()){
   firstquart&lt;- quantile(x, 0.25)
   secondquart&lt;- quantile(x, 0.50)
   thirdquart&lt;- quantile(x, 0.75)
   quarts&lt;- c(firstquart, secondquart, thirdquart)
+=======
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2AgVGhpcyBmdW5jdGlvbiB0YWtlcyBhIHZlY3RvciBjb250YWluaW5nIGEgc2FtcGxlXG4jYFxuI2AgQHBhcmFtIHggdGhlIHZlY3RvciBjb250YWluaW5nIHRoZSBzYW1wbGVcbiNgXG4jYCBAcmV0dXJuIGEgdmVjdG9yIHdpdGggdGhyZWUgY29tcG9uZW50cyB0aGUgZmlyc3QgcXVhcnRpbGUsIHRoZSB0aGlyZCBxdWFydGlsZSwgYW5kIHRoZSBpbnRlcnF1YXJ0aWxlXG5xdWFydGlsZXM8LSBmdW5jdGlvbiAoeD12ZWN0b3IoKSl7XG4gIGZpcnN0cXVhcnQ8LSBxdWFudGlsZSh4LCAwLjI1KVxuICB0aGlyZHF1YXJ0PC0gcXVhbnRpbGUoeCwgMC43NSlcbiAgaW50ZXJyYW5nZSA8LSB0aGlyZHF1YXJ0LWZpcnN0cXVhcnRcbiAgcXVhcnRzPC0gYyhmaXJzdHF1YXJ0LCB0aGlyZHF1YXJ0LCBpbnRlcnJhbmdlKVxuICByZXR1cm4ocXVhcnRzKVxufVxuYGBgIn0= -->
+<pre class="r"><code>#` This function takes a vector containing a sample
+#`
+#` @param x the vector containing the sample
+#`
+#` @return a vector with three components the first quartile, the third quartile, and the interquartile
+quartiles&lt;- function (x=vector()){
+  firstquart&lt;- quantile(x, 0.25)
+  thirdquart&lt;- quantile(x, 0.75)
+  interrange &lt;- thirdquart-firstquart
+  quarts&lt;- c(firstquart, thirdquart, interrange)
+>>>>>>> 081374421793ea5a5b7df11b830b7e452a6d9d26
   return(quarts)
 }</code></pre>
 <!-- rnb-source-end -->
@@ -1794,21 +1832,53 @@ quantile(x, 0.25)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXVhcnRpbGVzKHgpXG5gYGAifQ== -->
 <pre class="r"><code>quartiles(x)</code></pre>
 <!-- rnb-source-end -->
+<<<<<<< HEAD
 <!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlICAgIDUwJSAgICA3NSUgXG4tNC41MjUgIDEuMTAwICA0LjkwMCBcbiJ9 -->
 <pre><code>   25%    50%    75% 
 -4.525  1.100  4.900 </code></pre>
+=======
+<!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlICAgIDc1JSAgICA3NSUgXG4tNC41MjUgIDQuOTAwICA5LjQyNSBcbiJ9 -->
+<pre><code>   25%    75%    75% 
+-4.525  4.900  9.425 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuUTEgPC0gcXVhbnRpbGUoeCwgMC4yNSlcblEyIDwtIHF1YW50aWxlKHgsIDAuNSlcblEzIDwtIHF1YW50aWxlKHgsIDAuNzUpXG5pbnRlcnJhbmdlIDwtIFEzLVExXG5vdXQuYm90dG9tIDwtIFExLTEuNSppbnRlcnJhbmdlXG5vdXQudG9wIDwtIFEzKzEuNSppbnRlcnJhbmdlXG5cbm91dC5ib3R0b21cbmBgYCJ9 -->
+<pre class="r"><code>Q1 &lt;- quantile(x, 0.25)
+Q2 &lt;- quantile(x, 0.5)
+Q3 &lt;- quantile(x, 0.75)
+interrange &lt;- Q3-Q1
+out.bottom &lt;- Q1-1.5*interrange
+out.top &lt;- Q3+1.5*interrange
+
+out.bottom</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAyNSUgXG4tMTguNjYyNSBcbiJ9 -->
+<pre><code>     25% 
+-18.6625 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3V0LnRvcFxuYGBgIn0= -->
+<pre class="r"><code>out.top</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgIDc1JSBcbjE5LjAzNzUgXG4ifQ== -->
+<pre><code>    75% 
+19.0375 </code></pre>
+>>>>>>> 081374421793ea5a5b7df11b830b7e452a6d9d26
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
 <div id="problem-3" class="section level2">
 <h2>Problem 3</h2>
+<<<<<<< HEAD
 <p>The outliers are</p>
+=======
+<p>According to Tukey’s rule the outlier is 28.7. This value does not lie within the range of out.top and out.bottom.</p>
+>>>>>>> 081374421793ea5a5b7df11b830b7e452a6d9d26
 </div>
 <div id="problem-4" class="section level2">
 <h2>Problem 4</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<<<<<<< HEAD
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHVya2V5Lm91dGxpZXI8LSBmdW5jdGlvbiAoeD12ZWN0b3IoKSl7XG4gIGlmICh4PnF1YXJ0aWxlcyh4WzNdKSAmJiAoeDxxdWFydGlsZXMoeFsxXSkpIHtcbiAgICAgIFRSVUUgXG59ZWxzZSB7XG4gIEZBTFNFXG59XG59XG5cbmBgYCJ9 -->
 <pre class="r"><code>turkey.outlier&lt;- function (x=vector()){
   if (x&gt;quartiles(x[3]) &amp;&amp; (x&lt;quartiles(x[1])) {
@@ -1818,13 +1888,98 @@ quantile(x, 0.25)</code></pre>
 }
 }
 </code></pre>
+=======
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2AgVGhpcyBmdW5jdGlvbiB0YWtlcyBhIHZlY3RvciBjb250YWluaW5nIGEgc2FtcGxlIHRlbGxzIHdoaWNoIGVsZW1udHMgb2YgdGhlIHNhbXBsZSBhcmUgb3V0bGllcnMgXG4jYFxuI2AgQHBhcmFtIHggYSB2ZWN0b3IgY29udGFpbmluZyB0aGUgc2FtcGxlIFxuI2BcbiNgIEByZXR1cm4gYSBCb29sZWFuIHZlY3RvciB3aXRoIFRSVUUgYXQgdGhlIGVsZW1lbnRzIGNvb3Jlc3BvbmRpbmcgdG8gb3V0bGllciBvYnNlcnZhdGlvbnMgYW5kIEZBTFNFIGV2ZXJ5d2hlcmUgZWxzZVxudHVrZXkub3V0bGllciA8LSBmdW5jdGlvbih4PXZlY3RvcigpKXtcbiAgb3V0Y29tZXMgPC0gaWZlbHNlKCh4IDwgKChxdWFydGlsZXMoeClbMV0pLTEuNSoocXVhcnRpbGVzKHgpWzNdKSkgfCAoeCA+ICgocXVhcnRpbGVzKHgpWzJdKSsxLjUqKHF1YXJ0aWxlcyh4KVszXSkpKSksIFRSVUUsIEZBTFNFKVxuICByZXR1cm4ob3V0Y29tZXMpXG4gIH1cbmBgYCJ9 -->
+<pre class="r"><code>#` This function takes a vector containing a sample tells which elemnts of the sample are outliers 
+#`
+#` @param x a vector containing the sample 
+#`
+#` @return a Boolean vector with TRUE at the elements cooresponding to outlier observations and FALSE everywhere else
+tukey.outlier &lt;- function(x=vector()){
+  outcomes &lt;- ifelse((x &lt; ((quartiles(x)[1])-1.5*(quartiles(x)[3])) | (x &gt; ((quartiles(x)[2])+1.5*(quartiles(x)[3])))), TRUE, FALSE)
+  return(outcomes)
+  }</code></pre>
+>>>>>>> 081374421793ea5a5b7df11b830b7e452a6d9d26
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<<<<<<< HEAD
 </div>
 
 <div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMgVHVya2V5CgojIyBQcm9ibGVtIDEKCmBgYHtyfQp4IDwtIGMoMi4yLCA3LjgsIC00LjQsIDAuMCwgLTEuMiwgMy45LCA0LjksIC01LjcsIC03LjksIC00LjksIDI4LjcsIDQuOSkKcXVhbnRpbGUoeCwgMC4yNSkKcXVhbnRpbGUoeCwgMC43NSkKYGBgCgojIyBQcm9ibGVtIDIKCmBgYHtyfQpxdWFydGlsZXM8LSBmdW5jdGlvbiAoeD12ZWN0b3IoKSl7CiAgZmlyc3RxdWFydDwtIHF1YW50aWxlKHgsIDAuMjUpCiAgc2Vjb25kcXVhcnQ8LSBxdWFudGlsZSh4LCAwLjUwKQogIHRoaXJkcXVhcnQ8LSBxdWFudGlsZSh4LCAwLjc1KQogIHF1YXJ0czwtIGMoZmlyc3RxdWFydCwgc2Vjb25kcXVhcnQsIHRoaXJkcXVhcnQpCiAgcmV0dXJuKHF1YXJ0cykKfQpgYGAKCmBgYHtyfQpxdWFydGlsZXMoeCkKYGBgCgojIyBQcm9ibGVtIDMKClRoZSBvdXRsaWVycyBhcmUKCiMjIFByb2JsZW0gNAoKYGBge3J9CnR1cmtleS5vdXRsaWVyPC0gZnVuY3Rpb24gKHg9dmVjdG9yKCkpewogIGlmICh4PnF1YXJ0aWxlcyh4WzNdKSAmJiAoeDxxdWFydGlsZXMoeFsxXSkpIHsKICAgICAgVFJVRSAKfWVsc2UgewogIEZBTFNFCn0KfQoKYGBgCgoK</div>
+=======
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHVrZXkub3V0bGllcih4KVxuYGBgIn0= -->
+<pre class="r"><code>tukey.outlier(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hpY2godHVrZXkub3V0bGllcih4KSlcbmBgYCJ9 -->
+<pre class="r"><code>which(tukey.outlier(x))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDExXG4ifQ== -->
+<pre><code>[1] 11</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueFsxMV1cbmBgYCJ9 -->
+<pre class="r"><code>x[11]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI4LjdcbiJ9 -->
+<pre><code>[1] 28.7</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="problem-5" class="section level2">
+<h2>Problem 5</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2AgVGhpcyBmdW5jdGlvbiB0ZXN0IGlmIHlvdXIgZ3Vlc3NlcyBvZiBvdXRsaWVycyBhZ2FpbnN0IHR1a2V5J3MgdGVzdCBvZiBvdXRsaWVyc1xuI2BcbiNgIEBwYXJhbSAgdGhlIGZ1bmN0aW9uIHR1a2V5Lm91dGxpZXIgXG4jYFxuI2AgQHJldHVybiBUUlVFIGlmIHRoZSBmdW5jdGlvbiBjb3JyZWN0bHkgaWRlbnRpZmllcyB0aGUgb3V0bGllcnMgYW5kIEZBTFNFIG90aGVyd3NlXG50ZXN0LnR1a2V5Lm91dGxpZXIgPC0gZnVuY3Rpb24oZnVuID0gdHVrZXkub3V0bGllcil7XG4gIGNvcnJlY3QgPC0gYyhGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxUUlVFLEZBTFNFKVxuICBUb3JGIDwtIGlmZWxzZShjb3JyZWN0ID09IGZ1biwgVFJVRSwgRkFMU0UpXG4gIHJldHVybihUb3JGKVxufVxuXG50ZXN0LnR1a2V5Lm91dGxpZXIodHVrZXkub3V0bGllcih4KSlcbmBgYCJ9 -->
+<pre class="r"><code>#` This function test if your guesses of outliers against tukey's test of outliers
+#`
+#` @param  the function tukey.outlier 
+#`
+#` @return TRUE if the function correctly identifies the outliers and FALSE otherwse
+test.tukey.outlier &lt;- function(fun = tukey.outlier){
+  correct &lt;- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  TorF &lt;- ifelse(correct == fun, TRUE, FALSE)
+  return(TorF)
+}
+
+test.tukey.outlier(tukey.outlier(x))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBUUlVFIFRSVUUgVFJVRSBUUlVFIFRSVUUgVFJVRSBUUlVFIFRSVUUgVFJVRSBUUlVFIFRSVUUgVFJVRVxuIn0= -->
+<pre><code> [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="problem-6" class="section level2">
+<h2>Problem 6</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuLXhcbmBgYCJ9 -->
+<pre class="r"><code>-x</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgLTIuMiAgLTcuOCAgIDQuNCAgIDAuMCAgIDEuMiAgLTMuOSAgLTQuOSAgIDUuNyAgIDcuOSAgIDQuOSAtMjguNyAgLTQuOVxuIn0= -->
+<pre><code> [1]  -2.2  -7.8   4.4   0.0   1.2  -3.9  -4.9   5.7   7.9   4.9 -28.7  -4.9</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHVrZXkub3V0bGllcigteClcbmBgYCJ9 -->
+<pre class="r"><code>tukey.outlier(-x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>For -x the value -28.7 is an out liers.</p>
+<!-- rnb-text-end -->
+</div>
+</div>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKQXV0aG9yOiAiT2RhbHlzIEJhcnJpZW50b3MgJiBGYXRpbWEgR29oYXIiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgTGFiIDU6IEdldCBNZSBPdXQobGllcikgb2YgSGVyZSEKCiMjIFByb2JsZW0gMQpgYGB7cn0KeCA8LSBjKDIuMiwgNy44LCAtNC40LCAwLjAsIC0xLjIsIDMuOSwgNC45LCAtNS43LCAtNy45LCAtNC45LCAyOC43LCA0LjkpCgpxdWFudGlsZSh4LCAwLjI1KSAjIGZpcnN0IHF1YXJ0aWxlCnF1YW50aWxlKHgsMC41KSAjIGludGVycXVhcnRpbGUKcXVhbnRpbGUoeCwgMC43NSkgIyB0aGlyZCBxdWFydGlsZQpgYGAKCiMjIFByb2JsZW0gMgpgYGB7cn0KI2AgVGhpcyBmdW5jdGlvbiB0YWtlcyBhIHZlY3RvciBjb250YWluaW5nIGEgc2FtcGxlCiNgCiNgIEBwYXJhbSB4IHRoZSB2ZWN0b3IgY29udGFpbmluZyB0aGUgc2FtcGxlCiNgCiNgIEByZXR1cm4gYSB2ZWN0b3Igd2l0aCB0aHJlZSBjb21wb25lbnRzIHRoZSBmaXJzdCBxdWFydGlsZSwgdGhlIHRoaXJkIHF1YXJ0aWxlLCBhbmQgdGhlIGludGVycXVhcnRpbGUKcXVhcnRpbGVzPC0gZnVuY3Rpb24gKHg9dmVjdG9yKCkpewogIGZpcnN0cXVhcnQ8LSBxdWFudGlsZSh4LCAwLjI1KQogIHRoaXJkcXVhcnQ8LSBxdWFudGlsZSh4LCAwLjc1KQogIGludGVycmFuZ2UgPC0gdGhpcmRxdWFydC1maXJzdHF1YXJ0CiAgcXVhcnRzPC0gYyhmaXJzdHF1YXJ0LCB0aGlyZHF1YXJ0LCBpbnRlcnJhbmdlKQogIHJldHVybihxdWFydHMpCn0KYGBgCgpgYGB7cn0KcXVhcnRpbGVzKHgpClExIDwtIHF1YW50aWxlKHgsIDAuMjUpClEyIDwtIHF1YW50aWxlKHgsIDAuNSkKUTMgPC0gcXVhbnRpbGUoeCwgMC43NSkKaW50ZXJyYW5nZSA8LSBRMy1RMQpvdXQuYm90dG9tIDwtIFExLTEuNSppbnRlcnJhbmdlCm91dC50b3AgPC0gUTMrMS41KmludGVycmFuZ2UKCm91dC5ib3R0b20Kb3V0LnRvcApgYGAKCiMjIFByb2JsZW0gMwpBY2NvcmRpbmcgdG8gVHVrZXkncyBydWxlIHRoZSBvdXRsaWVyIGlzIDI4LjcuIFRoaXMgdmFsdWUgZG9lcyBub3QgbGllIHdpdGhpbiB0aGUgcmFuZ2Ugb2Ygb3V0LnRvcCBhbmQgb3V0LmJvdHRvbS4gCgojIyBQcm9ibGVtIDQKYGBge3J9CiNgIFRoaXMgZnVuY3Rpb24gdGFrZXMgYSB2ZWN0b3IgY29udGFpbmluZyBhIHNhbXBsZSB0ZWxscyB3aGljaCBlbGVtbnRzIG9mIHRoZSBzYW1wbGUgYXJlIG91dGxpZXJzIAojYAojYCBAcGFyYW0geCBhIHZlY3RvciBjb250YWluaW5nIHRoZSBzYW1wbGUgCiNgCiNgIEByZXR1cm4gYSBCb29sZWFuIHZlY3RvciB3aXRoIFRSVUUgYXQgdGhlIGVsZW1lbnRzIGNvb3Jlc3BvbmRpbmcgdG8gb3V0bGllciBvYnNlcnZhdGlvbnMgYW5kIEZBTFNFIGV2ZXJ5d2hlcmUgZWxzZQp0dWtleS5vdXRsaWVyIDwtIGZ1bmN0aW9uKHg9dmVjdG9yKCkpewogIG91dGNvbWVzIDwtIGlmZWxzZSgoeCA8ICgocXVhcnRpbGVzKHgpWzFdKS0xLjUqKHF1YXJ0aWxlcyh4KVszXSkpIHwgKHggPiAoKHF1YXJ0aWxlcyh4KVsyXSkrMS41KihxdWFydGlsZXMoeClbM10pKSkpLCBUUlVFLCBGQUxTRSkKICByZXR1cm4ob3V0Y29tZXMpCiAgfQpgYGAKCmBgYHtyfQp0dWtleS5vdXRsaWVyKHgpCndoaWNoKHR1a2V5Lm91dGxpZXIoeCkpCgp4WzExXQpgYGAKCiMjIFByb2JsZW0gNQpgYGB7cn0KI2AgVGhpcyBmdW5jdGlvbiB0ZXN0IGlmIHlvdXIgZ3Vlc3NlcyBvZiBvdXRsaWVycyBhZ2FpbnN0IHR1a2V5J3MgdGVzdCBvZiBvdXRsaWVycwojYAojYCBAcGFyYW0gIHRoZSBmdW5jdGlvbiB0dWtleS5vdXRsaWVyIAojYAojYCBAcmV0dXJuIFRSVUUgaWYgdGhlIGZ1bmN0aW9uIGNvcnJlY3RseSBpZGVudGlmaWVzIHRoZSBvdXRsaWVycyBhbmQgRkFMU0Ugb3RoZXJ3c2UKdGVzdC50dWtleS5vdXRsaWVyIDwtIGZ1bmN0aW9uKGZ1biA9IHR1a2V5Lm91dGxpZXIpewogIGNvcnJlY3QgPC0gYyhGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxGQUxTRSxUUlVFLEZBTFNFKQogIFRvckYgPC0gaWZlbHNlKGNvcnJlY3QgPT0gZnVuLCBUUlVFLCBGQUxTRSkKICByZXR1cm4oVG9yRikKfQoKdGVzdC50dWtleS5vdXRsaWVyKHR1a2V5Lm91dGxpZXIoeCkpCmBgYAoKIyMgUHJvYmxlbSA2CmBgYHtyfQoteAp0dWtleS5vdXRsaWVyKC14KQpgYGAKRm9yIC14IHRoZSB2YWx1ZSAtMjguNyBpcyBhbiBvdXQgbGllcnMuIAoKCg==</div>
+>>>>>>> 081374421793ea5a5b7df11b830b7e452a6d9d26
 
 
 
