@@ -94,7 +94,7 @@ test.tukey.outlier(fun=tukey.outlier)
 
 ## Problem 6
 ```{r}
-z <- -x
+-x
 ```
 For -x the value -28.7 is an out lier. 
 
@@ -106,22 +106,21 @@ For -x the value -28.7 is an out lier.
 #`
 #` @return TRUE if the function correctly identifies the outliers and FALSE otherwse
 test.tukey.outlier <- function(fun = tukey.outlier){
-  correct.z <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  x<-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+  x.neg <-c(-2.2, -7.8, 4.4, 0.0, 1.2, -3.9, -4.9, 5.7, 7.9, 4.9, -28.7, -4.9)
+  outlier<-fun(x)
+  neg.outlier <- fun(x.neg)
   correct <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
-  TorF <- ifelse(correct == fun, TRUE, FALSE)
-  TorF.z <- ifelse(correct.z == fun, TRUE, FALSE)
-  outcomes <- c(TorF, TorF.z)
-  return(outcomes)
+  is.correct<-sum(correct==outlier)==length(x)
+  is.corr<-sum(correct==neg.outlier)==length(x)
+  return(list(is.correct, is.corr))
 }
 
-test.tukey.outlier(tukey.outlier(z))
 ```
 
 ## Problem 8
 ```{r}
-tukey.outlier(z)
-which(tukey.outlier(z))
-z[11]
+test.tukey.outlier(fun=tukey.outlier)
 ```
 
 ## Problem 9
@@ -146,17 +145,20 @@ outbottom.y
 #`
 #` @return TRUE if the function correctly identifies the outliers and FALSE otherwse
 test.tukey.outlier <- function(fun = tukey.outlier){
-  correct.y <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
-  correct.z <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  x<-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+  x.neg <-c(-2.2, -7.8, 4.4, 0.0, 1.2, -3.9, -4.9, 5.7, 7.9, 4.9, -28.7, -4.9)
+  x.1 <- .1*x
+  outlier<-fun(x)
+  neg.outlier <- fun(x.neg)
+  outlier.1<- fun(x.1)
   correct <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
-  TorF <- ifelse(correct == fun, TRUE, FALSE)
-  TorF.z <- ifelse(correct.z == fun, TRUE, FALSE)
-  TorF.y <- ifelse(correct.y == fun, TRUE, FALSE)
-  outcomes <- c(TorF, TorF.z, TorF.y)
-  return(outcomes)
+  is.correct<-sum(correct==outlier)==length(x)
+  is.corr<-sum(correct==neg.outlier)==length(x)
+  is.corr.1<-sum(correct==outlier.1)==length(x)
+  return(list(is.correct, is.corr, is.corr.1)) 
 }
 
-test.tukey.outlier(tukey.outlier(y))
+test.tukey.outlier(fun=tukey.outlier)
 ```
 
 ## Problem 11
@@ -165,40 +167,3 @@ tukey.outlier(y)
 which(tukey.outlier(y))
 y[11]
 ```
-=======
-For -x the value -28.7 is an outlier. 
-
-## Problem 7
->>>>>>> ec5b20e9880f12b2803be19a5297094b200e1f03
-
-```{r}
-#` This function test if your guesses of outliers against tukey's test of outliers
-#`
-#` @param  the function tukey.outlier which tests for ourliers. 
-#`
-#` @return TRUE if the function correctly identifies the outliers and FALSE otherwise
-test.tukey.outlier <- function(fun = tukey.outlier){
-  x<-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
-  neg.x<-c(-2.2, -7.8, 4.4, 0.0, 1.2, -3.9, -4.9, 5.7, 7.9, 4.9, -28.7, -4.9)
-  outlier<-fun(x)
-  negativeoutlier<-fun(neg.x)
-  correct <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
-  is.correct<-sum(correct==outlier)==length(x)
-  is.corr<-sum(correct==negativeoutlier)==length(x)
-  return(list(is.correct, is.corr))
-}
-
-```
-## Problem 8
-
-```{r}
-test.tukey.outlier(fun=tukey.outlier)
-```
-
-## Problem 9
-
-```{r}
-x<-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
-0.1*x
-```
-The outlier is 2.87. 
