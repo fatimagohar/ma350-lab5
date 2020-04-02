@@ -78,16 +78,18 @@ x[11]
 ```{r}
 #` This function test if your guesses of outliers against tukey's test of outliers
 #`
-#` @param  the function tukey.outlier 
+#` @param  the function tukey.outlier which tests for ourliers. 
 #`
-#` @return TRUE if the function correctly identifies the outliers and FALSE otherwse
+#` @return TRUE if the function correctly identifies the outliers and FALSE otherwise
 test.tukey.outlier <- function(fun = tukey.outlier){
+  x<-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+  outlier<-fun(x)
   correct <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
-  TorF <- ifelse(correct == fun, TRUE, FALSE)
-  return(TorF)
+  is.correct<-sum(correct==outlier)==length(x)
+  return(is.correct)
 }
 
-test.tukey.outlier(tukey.outlier(x))
+test.tukey.outlier(fun=tukey.outlier)
 ```
 
 ## Problem 6
@@ -134,6 +136,7 @@ outbottom.y <- quantile(y,.75)+1.5*(quantile(y,.75)-quantile(y,.25))
 outtop.y
 outbottom.y
 ```
+<<<<<<< HEAD
 
 ## Problem 10
 ````{r}
@@ -162,4 +165,40 @@ tukey.outlier(y)
 which(tukey.outlier(y))
 y[11]
 ```
+=======
+For -x the value -28.7 is an outlier. 
 
+## Problem 7
+>>>>>>> ec5b20e9880f12b2803be19a5297094b200e1f03
+
+```{r}
+#` This function test if your guesses of outliers against tukey's test of outliers
+#`
+#` @param  the function tukey.outlier which tests for ourliers. 
+#`
+#` @return TRUE if the function correctly identifies the outliers and FALSE otherwise
+test.tukey.outlier <- function(fun = tukey.outlier){
+  x<-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+  neg.x<-c(-2.2, -7.8, 4.4, 0.0, 1.2, -3.9, -4.9, 5.7, 7.9, 4.9, -28.7, -4.9)
+  outlier<-fun(x)
+  negativeoutlier<-fun(neg.x)
+  correct <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  is.correct<-sum(correct==outlier)==length(x)
+  is.corr<-sum(correct==negativeoutlier)==length(x)
+  return(list(is.correct, is.corr))
+}
+
+```
+## Problem 8
+
+```{r}
+test.tukey.outlier(fun=tukey.outlier)
+```
+
+## Problem 9
+
+```{r}
+x<-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+0.1*x
+```
+The outlier is 2.87. 
