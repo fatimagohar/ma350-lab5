@@ -11,7 +11,7 @@ output: html_notebook
 x <- c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
 
 quantile(x, 0.25) # first quartile
-quantile(x,0.5) # interquartile
+quantile(x,0.5) 
 quantile(x, 0.75) # third quartile
 ```
 
@@ -33,19 +33,25 @@ quartiles<- function (x=vector()){
 
 ```{r}
 quartiles(x)
+
 Q1 <- quantile(x, 0.25)
-Q2 <- quantile(x, 0.5)
 Q3 <- quantile(x, 0.75)
 interrange <- Q3-Q1
-out.bottom <- Q1-1.5*interrange
-out.top <- Q3+1.5*interrange
 
-out.bottom
-out.top
+Q1
+Q2
+interrange
 ```
 
 ## Problem 3
 According to Tukey's rule the outlier is 28.7. This value does not lie within the range of out.top and out.bottom. 
+```{r}
+outtop <-Q1-1.5*interrange
+outbottom <- Q3+1.5*interrange
+
+outtop
+outbottom
+```
 
 ## Problem 4
 ```{r}
@@ -62,6 +68,7 @@ tukey.outlier <- function(x=vector()){
 
 ```{r}
 tukey.outlier(x)
+
 which(tukey.outlier(x))
 
 x[11]
@@ -85,9 +92,74 @@ test.tukey.outlier(tukey.outlier(x))
 
 ## Problem 6
 ```{r}
--x
-tukey.outlier(-x)
+z <- -x
 ```
-For -x the value -28.7 is an out liers. 
+For -x the value -28.7 is an out lier. 
 
+## Problem 7 
+```{r}
+#` This function test if your guesses of outliers against tukey's test of outliers
+#`
+#` @param  the function tukey.outlier 
+#`
+#` @return TRUE if the function correctly identifies the outliers and FALSE otherwse
+test.tukey.outlier <- function(fun = tukey.outlier){
+  correct.z <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  correct <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  TorF <- ifelse(correct == fun, TRUE, FALSE)
+  TorF.z <- ifelse(correct.z == fun, TRUE, FALSE)
+  outcomes <- c(TorF, TorF.z)
+  return(outcomes)
+}
+
+test.tukey.outlier(tukey.outlier(z))
+```
+
+## Problem 8
+```{r}
+tukey.outlier(z)
+which(tukey.outlier(z))
+z[11]
+```
+
+## Problem 9
+For vector y the out lier should be 2.87.
+```{r}
+y <- 0.1*x
+y
+
+outtop.y <-quantile(y,.25)-1.5*(quantile(y,.75)-quantile(y,.25))
+outbottom.y <- quantile(y,.75)+1.5*(quantile(y,.75)-quantile(y,.25))
+
+outtop.y
+outbottom.y
+```
+
+## Problem 10
+````{r}
+#` This function test if your guesses of outliers against tukey's test of outliers
+#`
+#` @param  the function tukey.outlier 
+#`
+#` @return TRUE if the function correctly identifies the outliers and FALSE otherwse
+test.tukey.outlier <- function(fun = tukey.outlier){
+  correct.y <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  correct.z <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  correct <- c(FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE)
+  TorF <- ifelse(correct == fun, TRUE, FALSE)
+  TorF.z <- ifelse(correct.z == fun, TRUE, FALSE)
+  TorF.y <- ifelse(correct.y == fun, TRUE, FALSE)
+  outcomes <- c(TorF, TorF.z, TorF.y)
+  return(outcomes)
+}
+
+test.tukey.outlier(tukey.outlier(y))
+```
+
+## Problem 11
+```{r}
+tukey.outlier(y)
+which(tukey.outlier(y))
+y[11]
+```
 
